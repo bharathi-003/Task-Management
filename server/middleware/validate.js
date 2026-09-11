@@ -106,8 +106,51 @@ const validateStatusUpdate = (req, res, next) => {
   next();
 };
 
+// Validate admin creation
+const validateCreateAdmin = (req, res, next) => {
+  const { name, email, password } = req.body;
+
+  if (!name || !name.trim()) {
+    return res.status(400).json({
+      success: false,
+      message: 'Name is required',
+    });
+  }
+
+  if (name.trim().length < 2 || name.trim().length > 100) {
+    return res.status(400).json({
+      success: false,
+      message: 'Name must be between 2 and 100 characters',
+    });
+  }
+
+  if (!email || !email.trim()) {
+    return res.status(400).json({
+      success: false,
+      message: 'Email address is required',
+    });
+  }
+
+  if (!isValidEmail(email.trim())) {
+    return res.status(400).json({
+      success: false,
+      message: 'Please provide a valid email address',
+    });
+  }
+
+  if (!password || password.length < 6) {
+    return res.status(400).json({
+      success: false,
+      message: 'Password must be at least 6 characters',
+    });
+  }
+
+  next();
+};
+
 module.exports = {
   validateLogin,
   validateCreateTask,
   validateStatusUpdate,
+  validateCreateAdmin,
 };

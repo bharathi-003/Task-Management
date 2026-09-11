@@ -15,7 +15,7 @@ const StatCard = ({ label, value, icon: Icon, variant = 'total', description }) 
   };
 
   return (
-    <div className={`stat-card stat-${variant}`}>
+    <div className={`stat-card glass-card stat-${variant}`}>
       <div className="stat-info">
         <span className="stat-label">{label}</span>
         <span className="stat-value">{value ?? 0}</span>

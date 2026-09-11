@@ -158,7 +158,7 @@ const EmployeeTasks = () => {
             const isUpdating = updatingTaskId === task._id;
 
             return (
-              <div key={task._id} className="employee-task-card">
+              <div key={task._id} className="employee-task-card glass-card">
                 <div className="task-card-header">
                   <h3 className="task-card-title">{task.title}</h3>
                   <PriorityBadge priority={task.priority} />

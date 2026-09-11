@@ -154,7 +154,7 @@ const AdminTasks = () => {
       )}
 
       {/* Task Table Card */}
-      <div className="card">
+      <div className="card glass-card">
         <div className="card-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <div

@@ -11,6 +11,7 @@ import {
   Sparkles,
   Shield,
   Briefcase,
+  ShieldCheck,
 } from 'lucide-react';
 
 const Sidebar = ({ isOpen, onClose }) => {
@@ -95,6 +96,19 @@ const Sidebar = ({ isOpen, onClose }) => {
                   <CheckSquare size={19} />
                 </div>
                 <span>All Tasks</span>
+              </NavLink>
+
+              <NavLink
+                to="/admin/admins"
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? 'active' : ''}`
+                }
+                onClick={onClose}
+              >
+                <div className="nav-icon">
+                  <ShieldCheck size={19} />
+                </div>
+                <span>Administrators</span>
               </NavLink>
             </>
           ) : (

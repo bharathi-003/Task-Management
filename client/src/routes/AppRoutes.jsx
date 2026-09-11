@@ -11,6 +11,7 @@ import Login from '../pages/Login';
 import AdminDashboard from '../pages/admin/AdminDashboard';
 import AdminEmployees from '../pages/admin/AdminEmployees';
 import AdminTasks from '../pages/admin/AdminTasks';
+import AdminAdmins from '../pages/admin/AdminAdmins';
 import EmployeeDashboard from '../pages/employee/EmployeeDashboard';
 import EmployeeTasks from '../pages/employee/EmployeeTasks';
 import Forbidden from '../pages/Forbidden';
@@ -60,6 +61,7 @@ const AppRoutes = () => {
         <Route path="dashboard" element={<AdminDashboard />} />
         <Route path="employees" element={<AdminEmployees />} />
         <Route path="tasks" element={<AdminTasks />} />
+        <Route path="admins" element={<AdminAdmins />} />
       </Route>
 
       {/* Employee Protected Routes */}

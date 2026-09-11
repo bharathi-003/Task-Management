@@ -128,6 +128,12 @@ const Login = () => {
               <div style={{ width: '26px', height: '26px', borderRadius: '50%', background: 'rgba(16, 185, 129, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <CheckCircle2 size={16} color="#10b981" />
               </div>
+              <span>Multi-Admin hierarchy & decentralized deliverable management</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '0.9rem', color: '#e2e8f0', fontWeight: 600 }}>
+              <div style={{ width: '26px', height: '26px', borderRadius: '50%', background: 'rgba(16, 185, 129, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <CheckCircle2 size={16} color="#10b981" />
+              </div>
               <span>Automated transactional notifications & email logging</span>
             </div>
           </div>
@@ -141,7 +147,7 @@ const Login = () => {
 
       {/* Right Login Panel */}
       <div className="auth-content">
-        <div className="auth-card">
+        <div className="auth-card glass-card">
           <div className="auth-header">
             <h1 className="auth-title">Sign in to your account</h1>
             <p className="auth-subtitle">

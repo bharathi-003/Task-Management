@@ -13,6 +13,7 @@ const DashboardLayout = () => {
     if (path.includes('/admin/dashboard')) return 'Executive Overview';
     if (path.includes('/admin/employees')) return 'Employee Directory';
     if (path.includes('/admin/tasks')) return 'Organization Tasks';
+    if (path.includes('/admin/admins')) return 'Administrator Directory';
     if (path.includes('/employee/dashboard')) return 'My Dashboard';
     if (path.includes('/employee/tasks')) return 'Assigned Deliverables';
     return 'TaskFlow';

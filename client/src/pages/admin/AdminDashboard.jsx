@@ -5,6 +5,7 @@ import { useToast } from '../../hooks/useToast';
 import StatCard from '../../components/StatCard';
 import { StatusBadge, PriorityBadge } from '../../components/TaskBadge';
 import TaskModal from '../../components/TaskModal';
+import CreateAdminModal from '../../components/CreateAdminModal';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import { formatDate } from '../../utils/formatDate';
 import {
@@ -19,6 +20,8 @@ import {
   Sparkles,
   Calendar,
   Layers,
+  UserPlus,
+  ShieldCheck,
 } from 'lucide-react';
 
 const AdminDashboard = () => {
@@ -34,6 +37,7 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCreateAdminOpen, setIsCreateAdminOpen] = useState(false);
 
   const { error } = useToast();
 
@@ -119,15 +123,27 @@ const AdminDashboard = () => {
           </p>
         </div>
 
-        <button
-          className="btn btn-primary"
-          onClick={() => setIsModalOpen(true)}
-          id="btn-assign-task"
-          style={{ padding: '12px 24px', fontSize: '0.94rem' }}
-        >
-          <Plus size={18} strokeWidth={2.5} />
-          <span>Assign New Task</span>
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+          <button
+            className="btn btn-secondary"
+            onClick={() => setIsCreateAdminOpen(true)}
+            id="btn-create-admin-dash"
+            style={{ padding: '12px 20px', fontSize: '0.92rem' }}
+          >
+            <UserPlus size={17} strokeWidth={2.4} />
+            <span>New Admin Account</span>
+          </button>
+
+          <button
+            className="btn btn-primary"
+            onClick={() => setIsModalOpen(true)}
+            id="btn-assign-task"
+            style={{ padding: '12px 24px', fontSize: '0.94rem' }}
+          >
+            <Plus size={18} strokeWidth={2.5} />
+            <span>Assign New Task</span>
+          </button>
+        </div>
       </div>
 
       {/* Error state */}
@@ -382,6 +398,13 @@ const AdminDashboard = () => {
       <TaskModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+        onSuccess={fetchDashboardData}
+      />
+
+      {/* Admin Creation Modal */}
+      <CreateAdminModal
+        isOpen={isCreateAdminOpen}
+        onClose={() => setIsCreateAdminOpen(false)}
         onSuccess={fetchDashboardData}
       />
     </div>

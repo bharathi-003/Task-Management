@@ -49,6 +49,12 @@ const seedDatabase = async () => {
       role: 'employee',
     });
 
+      const admin1= await User.create({
+      name: 'bharathi',
+      email: 'bharathiananth003@gmail.com',
+      password: 'Minato007',
+      role: 'admin',
+    });
     console.log('[Seed] Users created successfully:');
     console.log(`  - Admin: ${admin.email} (Password: Admin@123)`);
     console.log(`  - Employee 1: ${employee1.email} (Password: Employee@123)`);
@@ -67,7 +73,7 @@ const seedDatabase = async () => {
       },
       {
         title: 'Develop Employee Directory Table',
-        description: 'Create responsive data table with employee stats, status indicators, and mobile view.',
+        description: 'Create responsive data table `with employee stats, status indicators, and mobile view.',
         assignedTo: employee1._id,
         priority: 'Medium',
         status: 'In Progress',
